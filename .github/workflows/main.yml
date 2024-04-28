@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      # Node versions list
+      matrix:
+        node-version: [21.x]
+
+    steps:
+    - name: Install dependencies for server
+      run: cd server && npm install
+
+    - name: Lint server
+      run: cd server && npm run lint
+
+    - name: Run tests for server
+      run: cd server && npm test
