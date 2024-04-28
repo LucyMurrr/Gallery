@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./uploads:/app/uploads
+    ports:
+      - "3001:3001"
+
+  app:
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+  
