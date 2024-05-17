@@ -5,4 +5,4 @@
 # Запуск сервера
     node app.js
 # Тестирование сервера
-    <http://localhost:3001/>
+    http://localhost:3001/
